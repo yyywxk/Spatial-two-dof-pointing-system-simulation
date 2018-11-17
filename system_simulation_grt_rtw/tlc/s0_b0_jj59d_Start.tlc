@@ -1,0 +1,77 @@
+%implements s0_b0_jj59d_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS0B0 = OpaqueTLCBlockFcn("Start", 0, 0, 0, 0)
+%assign tlcStartFcnOfS0B6 = OpaqueTLCBlockFcn("Start", 0, 6, 0, 0)
+%assign tlcStartFcnOfS0B7 = OpaqueTLCBlockFcn("Start", 0, 7, 0, 0)
+%assign tlcStartFcnOfS0B8 = OpaqueTLCBlockFcn("Start", 0, 8, 0, 0)
+%assign tlcStartFcnOfS0B9 = OpaqueTLCBlockFcn("Start", 0, 9, 0, 0)
+%assign tlcStartFcnOfS0B10 = OpaqueTLCBlockFcn("Start", 0, 10, 0, 0)
+%assign tlcStartFcnOfS0B12 = OpaqueTLCBlockFcn("Start", 0, 12, 0, 0)
+%assign tlcStartFcnOfS0B13 = OpaqueTLCBlockFcn("Start", 0, 13, 0, 0)
+%assign tlcStartFcnOfS0B14 = OpaqueTLCBlockFcn("Start", 0, 14, 0, 0)
+%assign tlcStartFcnOfS0B15 = OpaqueTLCBlockFcn("Start", 0, 15, 0, 0)
+%assign tlcStartFcnOfS0B16 = OpaqueTLCBlockFcn("Start", 0, 16, 0, 0)
+%assign tlcStartFcnOfS0B17 = OpaqueTLCBlockFcn("Start", 0, 17, 0, 0)
+%if !WHITE_SPACE(tlcStartFcnOfS0B0)
+/* Start for ToWorkspace: '<Root>/To Workspace' */
+%<tlcStartFcnOfS0B0>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B6)
+/* Start for ToWorkspace: '<S1>/To Workspace1' */
+%<tlcStartFcnOfS0B6>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B7)
+/* Start for ToWorkspace: '<S1>/To Workspace2' */
+%<tlcStartFcnOfS0B7>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B8)
+/* Start for ToWorkspace: '<S2>/To Workspace1' */
+%<tlcStartFcnOfS0B8>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B9)
+/* Start for ToWorkspace: '<S2>/To Workspace2' */
+%<tlcStartFcnOfS0B9>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B10)
+/* Start for ToWorkspace: '<S2>/To Workspace3' */
+%<tlcStartFcnOfS0B10>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B12)
+/* Start for ToWorkspace: '<S3>/To Workspace' */
+%<tlcStartFcnOfS0B12>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B13)
+/* Start for ToWorkspace: '<S3>/To Workspace2' */
+%<tlcStartFcnOfS0B13>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B14)
+/* Start for ToWorkspace: '<S3>/To Workspace1' */
+%<tlcStartFcnOfS0B14>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B15)
+/* Start for ToWorkspace: '<S3>/To Workspace3' */
+%<tlcStartFcnOfS0B15>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B16)
+/* Start for ToWorkspace: '<S4>/To Workspace' */
+%<tlcStartFcnOfS0B16>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B17)
+/* Start for ToWorkspace: '<S4>/To Workspace1' */
+%<tlcStartFcnOfS0B17>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction

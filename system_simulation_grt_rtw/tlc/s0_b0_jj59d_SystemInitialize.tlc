@@ -1,0 +1,30 @@
+%implements s0_b0_jj59d_SystemInitialize "C"
+
+%function SystemInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for Integrator: '<S3>/Integrator1' */
+system_simulation_X.Integrator1_CSTATE[0] = system_simulation_P.attitude_angle_0[0];
+system_simulation_X.Integrator1_CSTATE[1] = system_simulation_P.attitude_angle_0[1];
+system_simulation_X.Integrator1_CSTATE[2] = system_simulation_P.attitude_angle_0[2];
+/* InitializeConditions for Integrator: '<S2>/Integrator' */
+memcpy(&system_simulation_X.Integrator_CSTATE[0], &system_simulation_P.u_0[0], sizeof(real_T) << 3U);
+/* InitializeConditions for Integrator: '<S3>/Integrator' */
+system_simulation_X.Integrator_CSTATE_a = system_simulation_P.alpha_0;
+/* InitializeConditions for Integrator: '<S3>/Integrator2' */
+system_simulation_X.Integrator2_CSTATE = system_simulation_P.beta_0;
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function SystemInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void SystemInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

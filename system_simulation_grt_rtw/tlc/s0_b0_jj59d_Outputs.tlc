@@ -1,0 +1,186 @@
+%implements s0_b0_jj59d_Outputs "C"
+
+%function Outputs(block, system) Output
+%<SLibCGIRAccessLocalVar(3, 0)> %% rtb_Reshape2
+%<SLibCGIRAccessLocalVar(4, 0)> %% rtb_Reshape
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T rtb_Clock;
+int32_T i;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS0B0 = OpaqueTLCBlockFcn("Outputs", 0, 0, 0, 2)
+%assign tlcOutputsFcnOfS0B3 = OpaqueTLCBlockFcn("Outputs", 0, 3, 0, 2)
+%assign tlcOutputsFcnOfS0B5 = OpaqueTLCBlockFcn("Outputs", 0, 5, 0, 2)
+%assign tlcOutputsFcnOfS0B6 = OpaqueTLCBlockFcn("Outputs", 0, 6, 0, 2)
+%assign tlcOutputsFcnOfS0B7 = OpaqueTLCBlockFcn("Outputs", 0, 7, 0, 2)
+%assign tlcOutputsFcnOfS0B8 = OpaqueTLCBlockFcn("Outputs", 0, 8, 0, 2)
+%assign tlcOutputsFcnOfS0B9 = OpaqueTLCBlockFcn("Outputs", 0, 9, 0, 2)
+%assign tlcOutputsFcnOfS0B10 = OpaqueTLCBlockFcn("Outputs", 0, 10, 0, 2)
+%assign tlcOutputsFcnOfS0B11 = OpaqueTLCBlockFcn("Outputs", 0, 11, 0, 2)
+%assign tlcOutputsFcnOfS0B12 = OpaqueTLCBlockFcn("Outputs", 0, 12, 0, 2)
+%assign tlcOutputsFcnOfS0B13 = OpaqueTLCBlockFcn("Outputs", 0, 13, 0, 2)
+%assign tlcOutputsFcnOfS0B14 = OpaqueTLCBlockFcn("Outputs", 0, 14, 0, 2)
+%assign tlcOutputsFcnOfS0B15 = OpaqueTLCBlockFcn("Outputs", 0, 15, 0, 2)
+%assign tlcOutputsFcnOfS0B16 = OpaqueTLCBlockFcn("Outputs", 0, 16, 0, 2)
+%assign tlcOutputsFcnOfS0B17 = OpaqueTLCBlockFcn("Outputs", 0, 17, 0, 2)
+/* Clock: '<Root>/Clock' */
+system_simulation_B.Clock = %<(SLibCG_SE(LibGetT()))>;
+if (%<(SLibCGIRIsSampleHit(1, 0))>) {
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B0)
+    /* ToWorkspace: '<Root>/To Workspace' */
+%<tlcOutputsFcnOfS0B0>\
+%endif
+}
+/* Integrator: '<S3>/Integrator1' */
+system_simulation_B.Integrator1[0] = system_simulation_X.Integrator1_CSTATE[0];
+system_simulation_B.Integrator1[1] = system_simulation_X.Integrator1_CSTATE[1];
+system_simulation_B.Integrator1[2] = system_simulation_X.Integrator1_CSTATE[2];
+/* Integrator: '<S2>/Integrator' */
+memcpy(&system_simulation_B.Integrator[0], &system_simulation_X.Integrator_CSTATE[0], sizeof(real_T) << 3U);
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B3)
+/* MATLABFcn: '<S3>/运动学函数' incorporates:
+ *  Constant: '<Root>/omega_0'
+ */
+%<tlcOutputsFcnOfS0B3>\
+%endif
+/* Integrator: '<S3>/Integrator' */
+system_simulation_B.Integrator_p = system_simulation_X.Integrator_CSTATE_a;
+/* Integrator: '<S3>/Integrator2' */
+system_simulation_B.Integrator2 = system_simulation_X.Integrator2_CSTATE;
+/* Clock: '<S4>/Clock' */
+rtb_Clock = %<(SLibCG_SE(LibGetT()))>;
+/* Reshape: '<S4>/Reshape' incorporates:
+ *  Fcn: '<S4>/Fcn4'
+ *  Fcn: '<S4>/Fcn5'
+ */
+system_simulation_B.Reshape[3] = sin(0.087266462599716474 * rtb_Clock) * 0.52359877559829882;
+system_simulation_B.Reshape[4] = sin(0.17453292519943295 * rtb_Clock) * 0.78539816339744828;
+/* Reshape: '<S4>/Reshape1' incorporates:
+ *  Fcn: '<S4>/Fcn2'
+ *  Fcn: '<S4>/Fcn3'
+ */
+system_simulation_B.Reshape1[3] = cos(0.087266462599716474 * rtb_Clock) * 0.04569261296800628;
+system_simulation_B.Reshape1[4] = cos(0.17453292519943295 * rtb_Clock) * 0.13707783890401887;
+/* Reshape: '<S4>/Reshape' incorporates:
+ *  Constant: '<S4>/Constant'
+ */
+system_simulation_B.Reshape[0] = system_simulation_P.Constant_Value_d[0];
+/* Reshape: '<S4>/Reshape1' incorporates:
+ *  Constant: '<S4>/Constant'
+ */
+system_simulation_B.Reshape1[0] = system_simulation_P.Constant_Value_d[0];
+/* Reshape: '<S4>/Reshape2' incorporates:
+ *  Constant: '<S4>/Constant'
+ */
+rtb_Reshape2[0] = system_simulation_P.Constant_Value_d[0];
+/* Reshape: '<S4>/Reshape' incorporates:
+ *  Constant: '<S4>/Constant'
+ */
+system_simulation_B.Reshape[1] = system_simulation_P.Constant_Value_d[1];
+/* Reshape: '<S4>/Reshape1' incorporates:
+ *  Constant: '<S4>/Constant'
+ */
+system_simulation_B.Reshape1[1] = system_simulation_P.Constant_Value_d[1];
+/* Reshape: '<S4>/Reshape2' incorporates:
+ *  Constant: '<S4>/Constant'
+ */
+rtb_Reshape2[1] = system_simulation_P.Constant_Value_d[1];
+/* Reshape: '<S4>/Reshape' incorporates:
+ *  Constant: '<S4>/Constant'
+ */
+system_simulation_B.Reshape[2] = system_simulation_P.Constant_Value_d[2];
+/* Reshape: '<S4>/Reshape1' incorporates:
+ *  Constant: '<S4>/Constant'
+ */
+system_simulation_B.Reshape1[2] = system_simulation_P.Constant_Value_d[2];
+/* Reshape: '<S4>/Reshape2' incorporates:
+ *  Constant: '<S4>/Constant'
+ *  Fcn: '<S4>/Fcn'
+ *  Fcn: '<S4>/Fcn1'
+ *  Gain: '<S4>/Gain'
+ *  Gain: '<S4>/Gain1'
+ */
+rtb_Reshape2[2] = system_simulation_P.Constant_Value_d[2];
+rtb_Reshape2[3] = sin(0.087266462599716474 * rtb_Clock) * 0.0039874327006558406 * system_simulation_P.Gain_Gain;
+rtb_Reshape2[4] = sin(0.17453292519943295 * rtb_Clock) * 0.023924596203935042 * system_simulation_P.Gain1_Gain;
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B5)
+/* MATLABFcn: '<S1>/control' */
+%<tlcOutputsFcnOfS0B5>\
+%endif
+/* Reshape: '<Root>/Reshape' incorporates:
+ *  Constant: '<Root>/Constant'
+ */
+rtb_Reshape[0] = system_simulation_P.Constant_Value[0];
+rtb_Reshape[1] = system_simulation_P.Constant_Value[1];
+rtb_Reshape[2] = system_simulation_P.Constant_Value[2];
+for (i = 0; i < 5; i++) {
+    rtb_Reshape[i + 3] = system_simulation_B.control[i];
+}
+/* End of Reshape: '<Root>/Reshape' */
+if (%<(SLibCGIRIsSampleHit(1, 0))>) {
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B6)
+    /* ToWorkspace: '<S1>/To Workspace1' */
+%<tlcOutputsFcnOfS0B6>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B7)
+    /* ToWorkspace: '<S1>/To Workspace2' */
+%<tlcOutputsFcnOfS0B7>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B8)
+    /* ToWorkspace: '<S2>/To Workspace1' */
+%<tlcOutputsFcnOfS0B8>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B9)
+    /* ToWorkspace: '<S2>/To Workspace2' */
+%<tlcOutputsFcnOfS0B9>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B10)
+    /* ToWorkspace: '<S2>/To Workspace3' */
+%<tlcOutputsFcnOfS0B10>\
+%endif
+}
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B11)
+/* MATLABFcn: '<S2>/动力学函数' */
+%<tlcOutputsFcnOfS0B11>\
+%endif
+if (%<(SLibCGIRIsSampleHit(1, 0))>) {
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B12)
+    /* ToWorkspace: '<S3>/To Workspace' */
+%<tlcOutputsFcnOfS0B12>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B13)
+    /* ToWorkspace: '<S3>/To Workspace2' */
+%<tlcOutputsFcnOfS0B13>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B14)
+    /* ToWorkspace: '<S3>/To Workspace1' */
+%<tlcOutputsFcnOfS0B14>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B15)
+    /* ToWorkspace: '<S3>/To Workspace3' */
+%<tlcOutputsFcnOfS0B15>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B16)
+    /* ToWorkspace: '<S4>/To Workspace' */
+%<tlcOutputsFcnOfS0B16>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B17)
+    /* ToWorkspace: '<S4>/To Workspace1' */
+%<tlcOutputsFcnOfS0B17>\
+%endif
+}
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction
